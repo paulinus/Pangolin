@@ -399,6 +399,9 @@ if(OpenEXR_FOUND)
   message(STATUS "libopenexr Found and Enabled")
 endif()
 
+if(UNIX AND NOT APPLE)
+   list(APPEND LINK_LIBS rt)
+endif()
 
 #######################################################
 ## Embed resource binary files
